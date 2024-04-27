@@ -8,4 +8,5 @@ if __name__ == '__main__':
     # 通过groupBy对数据进行分组
     # groupBy传入的函数的意思是,根据谁来进行分组
     result = rdd.groupBy(lambda t: t[0])
+    print(result.collect())
     print(result.map(lambda t: (t[0], list(t[1]))).collect())
