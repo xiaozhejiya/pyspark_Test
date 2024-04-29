@@ -10,4 +10,5 @@ if __name__ == '__main__':
     rdd = sc.parallelize([1, 3, 5, 1, 3, 4, 6], 1)
     # collect是一并收集到driver中,儿foreach则是在各个executor中执行操作(并行)
     # 比较实用的案例是在各个executor中实现数据写入mysql
+    # 是一个action算子
     rdd.foreach(lambda x: print(x))

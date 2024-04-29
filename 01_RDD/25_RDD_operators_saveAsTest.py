@@ -7,4 +7,5 @@ if __name__ == '__main__':
 
     rdd = sc.parallelize([1, 3, 5, 1, 3, 4, 6], 3)
     # 有executor执行
+    # 是一个action算子
     rdd.saveAsTextFile("../data/output/output2")

@@ -11,4 +11,5 @@ if __name__ == '__main__':
     # 参数一: 是否允许重复
     # 参数二: 采样个数
     # 参数三: 随机种子
+    # 是一个action算子
     print(rdd.takeSample(False, 5, 2))

@@ -9,5 +9,6 @@ if __name__ == '__main__':
 
     rdd = sc.parallelize([1, 3, 5, 1, 3, 4, 6], 1)
     # 参数一:前n个
-    # 参数二:排序规则
+    # 参数二:排序规则\
+    # 是一个action算子
     print(rdd.takeOrdered(3, lambda x: -x))

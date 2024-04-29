@@ -9,6 +9,7 @@ if __name__ == '__main__':
     sc = SparkContext(conf=conf)
 
     rdd = sc.parallelize(range(1, 10), 3)
+    # 是一个action算子
     # 返回第一个
     print(rdd.first())
     # 返回前n个

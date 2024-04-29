@@ -13,5 +13,6 @@ if __name__ == '__main__':
             result.append(i)
         print(result)
 
-
+    # 性能比foreach高,减少了网络IO
+    # 是一个action算子
     rdd.foreachPartition(process)

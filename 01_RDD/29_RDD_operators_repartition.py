@@ -7,6 +7,7 @@ if __name__ == '__main__':
     rdd = sc.parallelize([1, 3, 5, 1, 3, 4, 6], 3)
     # 修改分区数
     # 不推荐,容易造成多次shuffle
+    # 增加分区可能破坏内存迭代管道
     print(rdd.repartition(1).getNumPartitions())
     print(rdd.repartition(5).getNumPartitions())
     # coalesce修改分区\
