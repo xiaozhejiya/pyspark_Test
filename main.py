@@ -9,6 +9,9 @@ def print_hi(name):
     print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
 
 
+import numpy as np
+import pandas as pd
+
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
     result = ""

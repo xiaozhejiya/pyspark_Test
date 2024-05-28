@@ -10,7 +10,7 @@ if __name__ == '__main__':
     def process(iter):
         result = list()
         for i in iter:
-            result.append(i)
+            result.append((i, 1))
         return result
 
     # 跟map功能一样,但是他读取数据是按分区来读,减少网络IO
