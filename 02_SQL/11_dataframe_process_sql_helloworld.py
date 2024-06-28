@@ -18,5 +18,6 @@ if __name__ == '__main__':
     df.createGlobalTempView("score_3")  # 注册全局临视图,在使用时需要在前面带上global_temp. 前缀
     # 全局视图可在不同session使用
     spark.sql("select subject, count(*) as cnt from score group by subject").show()
+    # 如果表名重复则会替换,不会报错
     spark.sql("select subject, count(*) as cnt from score_2 group by subject").show()
     spark.sql("select subject, count(*) as cnt from global_temp.score_3 group by subject").show()

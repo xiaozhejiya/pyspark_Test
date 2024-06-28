@@ -34,6 +34,7 @@ if __name__ == '__main__':
     spark.sql("""
         select user_id, avg(score) as avg_score from movie_data group by user_id order by avg_score desc
     """).show()
+
     df.groupBy("user_id"). \
         avg("score"). \
         withColumnRenamed("avg(score)", "avg_score"). \

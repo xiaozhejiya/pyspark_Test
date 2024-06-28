@@ -2,9 +2,9 @@ from pyhive import hive
 if __name__ == '__main__':
     # 获取到spark ThriftServer连接
     conn = hive.Connection(
-        host="node5",
+        host="10.3.15.36",
         port=10000,
-        username="root"
+        username="root",
     )
     cursor = conn.cursor()
     cursor.execute("show databases")

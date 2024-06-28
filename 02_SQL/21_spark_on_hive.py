@@ -10,8 +10,8 @@ if __name__ == '__main__':
     spark = SparkSession.builder. \
         appName("test"). \
         master("local[*]"). \
-        config("spark.sql.warehouse.dir", "hdfs://node5:8020/user/hive/warehouse"). \
-        config("hive.metastore.uris", "thrift://node5:9083"). \
+        config("spark.sql.warehouse.dir", "hdfs://node1:8020/user/hive/warehouse"). \
+        config("hive.metastore.uris", "thrift://node1:9083"). \
         enableHiveSupport().\
         getOrCreate()
     sc = spark.sparkContext

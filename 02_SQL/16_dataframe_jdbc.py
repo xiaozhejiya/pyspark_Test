@@ -28,19 +28,19 @@ if __name__ == '__main__':
         load("../data/test_data/sql/u.data")
 
     # 写入数据到JDBC
-    # df.write.mode("overwrite"). \
-    #     format("jdbc"). \
-    #     option("url", "jdbc:mysql://10.3.15.116:3306/bigdata?useSSL=false&useUnicode=true"). \
-    #     option("dbtable", "movie_data"). \
-    #     option("user", "root"). \
-    #     option("password", "hadoop").\
-    #     save()
-    # 从JDBC读取数据
-    df2 = spark.read.format("jdbc"). \
-        option("url", "jdbc:mysql://10.3.15.116:3306/bigdata?useSSL=false&useUnicode=true"). \
+    df.write.mode("overwrite"). \
+        format("jdbc"). \
+        option("url", "jdbc:mysql://node1:3306/bigdata?createDatabaseIfNotExist=true&useSSL=false&useUnicode=true"). \
         option("dbtable", "movie_data"). \
         option("user", "root"). \
         option("password", "hadoop").\
-        load()
-    df2.select
-    df2.show()
+        save()
+    # 从JDBC读取数据
+    # df2 = spark.read.format("jdbc"). \
+    #     option("url", "jdbc:mysql://10.3.15.36:3306/bigdata?useSSL=false&useUnicode=true"). \
+    #     option("dbtable", "movie_data"). \
+    #     option("user", "root"). \
+    #     option("password", "hadoop").\
+    #     load()
+    # df2.select
+    # df2.show()
